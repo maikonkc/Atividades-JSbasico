@@ -1,0 +1,31 @@
+<script>
+    alunos = [
+        {
+            nome : "Gabriel",
+            notas : [3,2,5]
+        },
+        {
+            nome : "João",
+            notas : [9,8,10]
+        },
+        {
+            nome : "Guilherme",
+            notas : [7,6,8.5]
+        }
+    ]
+    function ordenaAlunos(array){
+        const reducer = (a, b) => a + b;
+
+        array.sort((a, b) => {
+            if(a.notas.reduce(reducer) > b.notas.reduce(reducer)){
+                return -1;
+            }
+            else{
+                return 1;
+            }
+        })
+        return alunos;
+    }
+
+    console.log(ordenaAlunos(alunos));
+</script>
